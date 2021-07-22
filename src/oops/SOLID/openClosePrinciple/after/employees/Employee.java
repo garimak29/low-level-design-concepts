@@ -1,6 +1,5 @@
 package oops.SOLID.openClosePrinciple.after.employees;
 
-import oops.SOLID.openClosePrinciple.after.service.TaxCalculatorService;
 import oops.SOLID.openClosePrinciple.after.taxes.iTaxCalculator;
 
 /*
