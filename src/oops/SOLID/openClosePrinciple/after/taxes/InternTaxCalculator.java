@@ -6,7 +6,7 @@ public class InternTaxCalculator implements iTaxCalculator {
 	private final static int INCOME_TAX_PERCENTAGE = 15;
 	
 	@Override
-	public double calculateTax(Employee employee) {
+	public  double calculateTax(Employee employee) {
 				if(employee.getMonthlyIncome()*12 < 300000)
 					return 0;
 				else

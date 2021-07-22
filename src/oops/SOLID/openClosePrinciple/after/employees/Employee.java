@@ -1,5 +1,6 @@
 package oops.SOLID.openClosePrinciple.after.employees;
 
+import oops.SOLID.openClosePrinciple.after.service.TaxCalculatorService;
 import oops.SOLID.openClosePrinciple.after.taxes.iTaxCalculator;
 
 /*
@@ -10,14 +11,15 @@ public abstract class Employee {
     private String lastName;
     private int monthlyIncome;
     private int nbHoursPerWeek;
-    private iTaxCalculator taxCalulator;
+   
 
-    public Employee(String fullName, int monthlyIncome){
+	public Employee(String fullName, int monthlyIncome ){
         setMonthlyIncome(monthlyIncome);
 
         String[] names = fullName.split(" ");
         this.firstName = names[0];
         this.lastName = names[1];
+       
     }
 
     public String getEmail() {
@@ -60,6 +62,8 @@ public abstract class Employee {
     public String getFullName(){
         return this.firstName + " " + this.lastName;
     }
-    public abstract double calculateTax(Employee employee);
+    
+   
+  
 }
 

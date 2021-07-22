@@ -6,6 +6,7 @@ import java.util.Locale;
 
 import oops.SOLID.openClosePrinciple.after.employees.Employee;
 import oops.SOLID.openClosePrinciple.after.persistence.EmployeeRepository;
+import oops.SOLID.openClosePrinciple.after.persistence.FactoryCreateTaxCalculator;
 
 
 public class CalculateTaxesClient {
@@ -25,11 +26,15 @@ public class CalculateTaxesClient {
         for (Employee employee: employees){
         	System.out.println(employee.toString());
             // compute individual tax
-            double tax = employee.calculateTax(employee);
+        	
+            double tax = FactoryCreateTaxCalculator.getCalculator(employee)
+            		.calculateTax(employee);
+           
             String formattedTax = currencyFormatter.format(tax);
             System.out.println(formattedTax);
             // add to company total taxes
-            totalTaxes += employee.calculateTax(employee);
+            totalTaxes += FactoryCreateTaxCalculator.getCalculator(employee)
+            		.calculateTax(employee);;
            
         }
     }
