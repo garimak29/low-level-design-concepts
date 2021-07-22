@@ -1,5 +1,6 @@
 package oops.SOLID.openClosePrinciple.after.employees;
 
+import oops.SOLID.openClosePrinciple.after.service.TaxCalculateService;
 import oops.SOLID.openClosePrinciple.after.taxes.iTaxCalculator;
 
 /*
@@ -62,7 +63,6 @@ public abstract class Employee {
         return this.firstName + " " + this.lastName;
     }
     
-   
   
 }
 
